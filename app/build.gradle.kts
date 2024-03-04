@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -22,9 +24,12 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -37,7 +42,30 @@ android {
 
 dependencies {
 
+    @Suppress("ktlint:standard:property-naming")
+    val lifecycle_version = "2.6.2"
+    val room_version = "2.6.1"
+    val nav_version = "2.7.7"
+    val lottieVersion = "6.1.0"
     implementation("androidx.core:core-ktx:1.12.0")
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+
+    // Navigation-fragment
+    implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    // lottie
+    implementation("com.airbnb.android:lottie:$lottieVersion")
+
+    // API
+    implementation("com.squareup.moshi:moshi:1.15.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    // Fragment
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

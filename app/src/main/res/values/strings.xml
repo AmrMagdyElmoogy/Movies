@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Movies</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_releases">New Releases</string>
+    <string name="movie_image">movie_image</string>
+    <string name="_22_crime_drima_2022">22 Crime,Drima 2022</string>
+    <string name="overiew_temp">When a Delta Force special ops mission goes terribly wrong, Air Force drone pilot Reaper has 48 hours to remedy what has devolved into a wild rescue operation. With no weapons and no communication other than the drone above, the ground mission suddenly becomes a full-scale battle when the team is discovered by the enemy.</string>
 </resources>

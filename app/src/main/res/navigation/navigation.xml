@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/moviesTrendsFragment">
+
+    <fragment
+        android:id="@+id/moviesTrendsFragment"
+        android:name="com.example.movies.trends.presentation.MoviesTrendsFragment"
+        android:label="fragment_movies_trends"
+        tools:layout="@layout/fragment_movies_trends">
+        <action
+            android:id="@+id/toDetailsScreen"
+            app:destination="@id/movieDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.example.movies.movieDetails.MoviesDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details">
+        <argument
+            android:name="movie"
+            app:argType="com.example.movies.trends.data.entity.MovieItem" />
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_moviesTrendsFragment"
+            app:destination="@id/moviesTrendsFragment" />
+    </fragment>
+</navigation>
