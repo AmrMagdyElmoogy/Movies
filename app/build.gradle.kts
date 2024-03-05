@@ -52,7 +52,9 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     // Hilt
     implementation("com.google.dagger:hilt-android:2.49")
+    implementation("androidx.hilt:hilt-work:1.2.0")
     ksp("com.google.dagger:hilt-android-compiler:2.48")
+    ksp("androidx.hilt:hilt-compiler:1.2.0")
 
     // Navigation-fragment
     implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
@@ -65,14 +67,20 @@ dependencies {
     // coil
     implementation("io.coil-kt:coil:2.5.0")
 
+    // WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
     // API
     implementation("com.squareup.moshi:moshi:1.15.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     ksp("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
-
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
+    // Room
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
     // Fragment
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.appcompat:appcompat:1.6.1")

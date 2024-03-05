@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--suppress NavigationFile -->
+<?xml version="1.0" encoding="utf-8"?><!--suppress NavigationFile -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +12,11 @@
         tools:layout="@layout/fragment_movies_trends">
         <action
             android:id="@+id/toDetailsScreen"
-            app:destination="@id/movieDetailsFragment" />
+            app:destination="@id/movieDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
@@ -22,7 +25,7 @@
         tools:layout="@layout/fragment_movie_details">
         <argument
             android:name="movie"
-            app:argType="com.example.movies.trends.data.entity.MovieItem" />
+            app:argType="com.example.movies.trends.data.models.entity.MovieItem" />
         <action
             android:id="@+id/action_movieDetailsFragment_to_moviesTrendsFragment"
             app:destination="@id/moviesTrendsFragment" />

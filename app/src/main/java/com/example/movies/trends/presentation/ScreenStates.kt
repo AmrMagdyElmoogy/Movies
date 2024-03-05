@@ -1,6 +1,6 @@
 package com.example.movies.trends.presentation
 
-import com.example.movies.trends.data.entity.MovieItem
+import com.example.movies.trends.data.models.entity.MovieItem
 
 data class ScreenStates(
     val isLoading: Boolean = true,

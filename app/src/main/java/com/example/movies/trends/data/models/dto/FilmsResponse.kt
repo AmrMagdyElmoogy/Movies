@@ -1,4 +1,4 @@
-package com.example.movies.trends.data.dto
+package com.example.movies.trends.data.models.dto
 
 import com.squareup.moshi.JsonClass
 

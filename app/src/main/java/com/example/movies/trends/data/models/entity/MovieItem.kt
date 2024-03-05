@@ -1,4 +1,4 @@
-package com.example.movies.trends.data.entity
+package com.example.movies.trends.data.models.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -11,4 +11,5 @@ data class MovieItem(
     val releaseDate: String,
     val overview: String,
     val image: String,
+    val state: String,
 ) : Parcelable

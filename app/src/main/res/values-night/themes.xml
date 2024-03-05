@@ -6,6 +6,8 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:colorPrimary">#ffb700</item>
         <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="android:statusBarColor">#090f25</item>
+
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>

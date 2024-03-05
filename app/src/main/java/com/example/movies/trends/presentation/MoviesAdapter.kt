@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.example.movies.databinding.NowPlayingItemBinding
-import com.example.movies.trends.data.entity.MovieItem
+import com.example.movies.trends.data.models.entity.MovieItem
 
 class MoviesAdapter(
     private val onNavigateToDetailsScreen: (MovieItem) -> Unit,

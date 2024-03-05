@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import coil.load
 import com.example.movies.databinding.FragmentMovieDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 import com.example.movies.movieDetails.MoviesDetailsFragmentArgs as MoviesDetailsFragmentArgs1
 
 /**
@@ -14,6 +16,8 @@ import com.example.movies.movieDetails.MoviesDetailsFragmentArgs as MoviesDetail
  * Use the [MovieDetailsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+@AndroidEntryPoint
 class MoviesDetailsFragment : Fragment() {
     @Suppress("ktlint:standard:property-naming")
     private var _movieDetailsBinding: FragmentMovieDetailsBinding? = null
@@ -32,6 +36,7 @@ class MoviesDetailsFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
         movieDetailsBinding.apply {
+            movieImage.load(args.movie.image)
             movieTitle.text = args.movie.title
             movieOveriew.text = args.movie.overview
             ratingImdb.text = args.movie.rating

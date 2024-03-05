@@ -19,16 +19,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/now_playing_recycle"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toStartOf="@id/top_rated"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newReleases"
-        tools:listitem="@layout/now_playing_item" />
+        app:layout_constraintTop_toBottomOf="@+id/newReleases">
+
+        <include
+            android:id="@+id/upper_part"
+            layout="@layout/horizontal_cards_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/animation1"
+            layout="@layout/loading_animation"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center" />
+
+        <include
+
+            android:id="@+id/animation2"
+            layout="@layout/error_animation"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/top_rated"
@@ -40,19 +59,44 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/now_playing_recycle" />
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/top_rated_recycle"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_rated"
-        tools:listitem="@layout/now_playing_item" />
+        app:layout_constraintTop_toBottomOf="@id/top_rated">
+
+        <include
+            android:id="@+id/lowerPart"
+            layout="@layout/horizontal_cards_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/animation3"
+            layout="@layout/loading_animation"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center" />
+
+        <include
+            android:id="@+id/animation4"
+            layout="@layout/error_animation"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

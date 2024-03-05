@@ -1,6 +1,6 @@
 package com.example.movies.trends.data.api
 
-import com.example.movies.trends.data.dto.FilmsResponse
+import com.example.movies.trends.data.models.dto.FilmsResponse
 import com.example.movies.utils.API_KEY
 import com.example.movies.utils.NOW_PLAYING
 import retrofit2.Response
