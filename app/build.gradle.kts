@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -49,7 +51,8 @@ dependencies {
     val lottieVersion = "6.1.0"
     implementation("androidx.core:core-ktx:1.12.0")
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
+    implementation("com.google.dagger:hilt-android:2.49")
+    ksp("com.google.dagger:hilt-android-compiler:2.48")
 
     // Navigation-fragment
     implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
@@ -59,8 +62,14 @@ dependencies {
     // lottie
     implementation("com.airbnb.android:lottie:$lottieVersion")
 
+    // coil
+    implementation("io.coil-kt:coil:2.5.0")
+
     // API
     implementation("com.squareup.moshi:moshi:1.15.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
