@@ -79,15 +79,15 @@
         <include
             android:id="@+id/animation3"
             layout="@layout/loading_animation"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center" />
 
         <include
             android:id="@+id/animation4"
             layout="@layout/error_animation"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_gravity="center" />
     </FrameLayout>
 

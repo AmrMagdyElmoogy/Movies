@@ -1,6 +1,6 @@
 package com.example.movies.trends.data.models.dto
 
-import com.example.movies.trends.data.models.entity.MovieItem
+import com.example.movies.trends.domain.entity.MovieItem
 
 fun SingleMovieResponse.toMovieEntity() =
     MovieItem(

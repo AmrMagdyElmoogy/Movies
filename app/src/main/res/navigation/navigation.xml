@@ -25,7 +25,7 @@
         tools:layout="@layout/fragment_movie_details">
         <argument
             android:name="movie"
-            app:argType="com.example.movies.trends.data.models.entity.MovieItem" />
+            app:argType="com.example.movies.trends.domain.entity.MovieItem" />
         <action
             android:id="@+id/action_movieDetailsFragment_to_moviesTrendsFragment"
             app:destination="@id/moviesTrendsFragment" />

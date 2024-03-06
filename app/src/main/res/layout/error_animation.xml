@@ -5,6 +5,7 @@
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:layout_gravity="center"
+    app:lottie_repeatCount="10"
     android:visibility="gone"
     app:lottie_autoPlay="true"
-    app:lottie_rawRes="@raw/loading" />
+    app:lottie_rawRes="@raw/error" />

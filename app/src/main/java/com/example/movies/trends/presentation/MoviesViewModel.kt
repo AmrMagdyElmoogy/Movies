@@ -2,14 +2,15 @@ package com.example.movies.trends.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movies.trends.data.models.entity.MovieItem
 import com.example.movies.trends.domain.MoviesTrendsRepository
+import com.example.movies.trends.domain.entity.MovieItem
 import com.example.movies.utils.NEW_RELEASES_GENERA
+import com.example.movies.utils.errorState
+import com.example.movies.utils.successState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -19,6 +20,7 @@ class MoviesViewModel
     constructor(
         private val filmsRepository: MoviesTrendsRepository,
     ) : ViewModel() {
+        @Suppress("ktlint:standard:property-naming")
         private val _newReleasedUiState = MutableStateFlow(ScreenStates())
 
         val newReleasesUiState: StateFlow<ScreenStates>
@@ -34,17 +36,12 @@ class MoviesViewModel
                 filmsRepository.getAllFilmsLocally().collect {
                     val pair: Pair<List<MovieItem>, List<MovieItem>> =
                         it.partition { movie -> movie.state == NEW_RELEASES_GENERA }
-                    _newReleasedUiState.update { state ->
-                        state.copy(
-                            isLoading = false,
-                            success = pair.first,
-                        )
-                    }
-                    _topRatedState.update { state ->
-                        state.copy(
-                            isLoading = false,
-                            success = pair.second,
-                        )
+                    if (pair.first.isEmpty() && pair.second.isEmpty()) {
+                        _newReleasedUiState.errorState()
+                        _topRatedState.errorState()
+                    } else {
+                        _newReleasedUiState.successState(pair.first)
+                        _topRatedState.successState(pair.second)
                     }
                 }
             }

@@ -11,12 +11,6 @@ import com.example.movies.databinding.FragmentMovieDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.example.movies.movieDetails.MoviesDetailsFragmentArgs as MoviesDetailsFragmentArgs1
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MovieDetailsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-
 @AndroidEntryPoint
 class MoviesDetailsFragment : Fragment() {
     @Suppress("ktlint:standard:property-naming")

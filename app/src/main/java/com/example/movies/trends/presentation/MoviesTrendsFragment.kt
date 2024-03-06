@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
@@ -15,21 +14,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.R
 import com.example.movies.databinding.FragmentMoviesTrendsBinding
-import com.example.movies.trends.data.models.entity.MovieItem
+import com.example.movies.trends.domain.entity.MovieItem
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MoviesTrendsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 
 const val TAG = "TrendsFragment"
 
@@ -71,17 +58,18 @@ class MoviesTrendsFragment : Fragment() {
         newReleasesRV = moviesTrendsBinding.upperPart.nowPlayingRecycle
         topRatedRV = moviesTrendsBinding.lowerPart.nowPlayingRecycle
 
+        // Collect Now Releases Films
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.moviesUiState.collect {
+                viewModel.newReleasesUiState.collect {
                     if (it.isLoading) {
-                        moviesTrendsBinding.animation1.loading.isVisible = true
+                        moviesTrendsBinding.animation1.loading.visibility = View.VISIBLE
                     } else if (it.isError) {
-                        moviesTrendsBinding.animation1.loading.isVisible = false
-                        moviesTrendsBinding.animation2.error.isVisible = true
+                        moviesTrendsBinding.animation1.loading.visibility = View.GONE
+                        moviesTrendsBinding.animation2.error.visibility = View.VISIBLE
                     } else {
-                        moviesTrendsBinding.animation1.loading.isVisible = false
-                        moviesTrendsBinding.animation2.error.isVisible = false
+                        moviesTrendsBinding.animation1.loading.visibility = View.GONE
+                        moviesTrendsBinding.animation2.error.visibility = View.GONE
                         val list = it.success as List<MovieItem>
                         newReleaseAdapter.submitList(list)
                     }
@@ -89,17 +77,18 @@ class MoviesTrendsFragment : Fragment() {
             }
         }
 
+        // Collect Top Rated Films
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.topRatedState.collect {
                     if (it.isLoading) {
-                        moviesTrendsBinding.animation3.loading.isVisible = true
+                        moviesTrendsBinding.animation1.loading.visibility = View.VISIBLE
                     } else if (it.isError) {
-                        moviesTrendsBinding.animation3.loading.isVisible = false
-                        moviesTrendsBinding.animation4.error.isVisible = true
+                        moviesTrendsBinding.animation1.loading.visibility = View.GONE
+                        moviesTrendsBinding.animation2.error.visibility = View.VISIBLE
                     } else {
-                        moviesTrendsBinding.animation3.loading.isVisible = false
-                        moviesTrendsBinding.animation4.error.isVisible = false
+                        moviesTrendsBinding.animation1.loading.visibility = View.GONE
+                        moviesTrendsBinding.animation2.error.visibility = View.GONE
                         val list = it.success as List<MovieItem>
                         topRatedAdapter.submitList(list)
                     }

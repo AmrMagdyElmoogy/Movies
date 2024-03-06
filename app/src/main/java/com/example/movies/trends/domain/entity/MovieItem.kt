@@ -1,4 +1,4 @@
-package com.example.movies.trends.data.models.entity
+package com.example.movies.trends.domain.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -3,7 +3,7 @@ package com.example.movies.trends.presentation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.movies.databinding.NowPlayingItemBinding
-import com.example.movies.trends.data.models.entity.MovieItem
+import com.example.movies.trends.domain.entity.MovieItem
 import com.example.movies.utils.PREFIX_IMAGE_URL
 
 class MoviesViewHolder(

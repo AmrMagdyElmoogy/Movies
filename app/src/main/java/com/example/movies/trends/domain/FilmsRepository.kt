@@ -6,7 +6,7 @@ import com.example.movies.trends.data.db.MoviesServiceDAO
 import com.example.movies.trends.data.models.dto.FilmsResponse
 import com.example.movies.trends.data.models.dto.toMovieEntity
 import com.example.movies.trends.data.models.dto.toMovieTableEntity
-import com.example.movies.trends.data.models.entity.MovieItem
+import com.example.movies.trends.domain.entity.MovieItem
 import com.example.movies.utils.NEW_RELEASES_GENERA
 import com.example.movies.utils.TOP_RATED_GENERA
 import kotlinx.coroutines.flow.Flow
