@@ -11,16 +11,14 @@ Welcome to the Movie Application! This app allows you to explore currently playi
 
 The app offers a customizable user experience with both dark and light themes.
 ## Dark Theme
-![](https://github.com/AmrMagdyElmoogy/Movies/blob/main/app/src/main/res/drawable/dark_theme.png)
+![](https://github.com/AmrMagdyElmoogy/Movies/assets/47532331/21a4cedd-46f4-441b-b2ce-6c7dd66bc8c9)
+
 ## Light Theme 
-![](https://github.com/AmrMagdyElmoogy/Movies/blob/main/app/src/main/res/drawable/light_theme.png)
+![](https://github.com/AmrMagdyElmoogy/Movies/assets/47532331/48426c26-8111-411e-ab17-dbe8ba8a031e)
 
 
 ## Live Demo 
-
 https://github.com/AmrMagdyElmoogy/Movies/assets/47532331/09de6a48-b456-4bc5-b424-4c9aded08445
-
-
 
 # Architecture
 
