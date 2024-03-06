@@ -19,17 +19,13 @@ class MoviesViewModel
     constructor(
         private val filmsRepository: MoviesTrendsRepository,
     ) : ViewModel() {
-        // State Holder
-        private val _moviesUiState = MutableStateFlow(ScreenStates())
+        private val _newReleasedUiState = MutableStateFlow(ScreenStates())
 
-        // For UI purposes
-        val moviesUiState: StateFlow<ScreenStates>
-            get() = _moviesUiState
+        val newReleasesUiState: StateFlow<ScreenStates>
+            get() = _newReleasedUiState
 
-        // State Holder
         private val _topRatedState = MutableStateFlow(ScreenStates())
 
-        // For UI purposes
         val topRatedState: StateFlow<ScreenStates>
             get() = _topRatedState
 
@@ -38,7 +34,7 @@ class MoviesViewModel
                 filmsRepository.getAllFilmsLocally().collect {
                     val pair: Pair<List<MovieItem>, List<MovieItem>> =
                         it.partition { movie -> movie.state == NEW_RELEASES_GENERA }
-                    _moviesUiState.update { state ->
+                    _newReleasedUiState.update { state ->
                         state.copy(
                             isLoading = false,
                             success = pair.first,
