@@ -42,8 +42,10 @@ The app implements a unidirectional data flow to ensure a predictable and mainta
 
 # Project Architecture Overview
 <p align="center">
-  <img src="https://github.com/AmrMagdyElmoogy/Movies/blob/main/app/src/main/res/drawable/arch.png" alt="Image" width="100%">
+  <img src="https://github.com/AmrMagdyElmoogy/Movies/assets/47532331/e55f4d7c-11f0-40bc-bd85-9bea9ba3f014" alt="Image" width="100%">
 </p>
+
+
 
 
 
