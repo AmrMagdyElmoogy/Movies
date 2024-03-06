@@ -6,7 +6,9 @@ import android.app.NotificationManager
 import android.os.Build
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
+import androidx.work.Constraints
 import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.example.movies.utils.CHANNEL_ID
@@ -23,8 +25,13 @@ class MainApplication : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
+        val constraints =
+            Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
         val workRequest =
-            PeriodicWorkRequestBuilder<PeriodicFetchNewFilmsWorker>(4, TimeUnit.HOURS).build()
+            PeriodicWorkRequestBuilder<PeriodicFetchNewFilmsWorker>(
+                4,
+                TimeUnit.HOURS,
+            ).setConstraints(constraints).build()
 
         WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
             "UniquePeriodicWork",
