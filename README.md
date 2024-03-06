@@ -37,8 +37,11 @@ The app implements a unidirectional data flow to ensure a predictable and mainta
 ---
 
 # Project Architecture Overview
+<p align="center">
+  <img src="https://github.com/AmrMagdyElmoogy/Movies/blob/main/app/src/main/res/drawable/arch.png" alt="Image" width="100%">
+</p>
 
-![](https://github.com/AmrMagdyElmoogy/Movies/blob/main/app/src/main/res/drawable/arch.png) 
+
 
 Our project follows a clean architecture pattern, dividing the codebase into three distinct layers for enhanced maintainability and scalability.
 
