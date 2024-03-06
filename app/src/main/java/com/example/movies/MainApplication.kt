@@ -24,7 +24,7 @@ class MainApplication : Application(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         val workRequest =
-            PeriodicWorkRequestBuilder<PeriodicFetchNewFilmsWorker>(15, TimeUnit.MINUTES).build()
+            PeriodicWorkRequestBuilder<PeriodicFetchNewFilmsWorker>(4, TimeUnit.HOURS).build()
 
         WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
             "UniquePeriodicWork",

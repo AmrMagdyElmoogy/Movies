@@ -41,7 +41,7 @@
         android:src="@drawable/date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movie_title"
-        app:tint="@color/white" />
+        app:tint="?android:attr/textColor" />
 
     <TextView
         android:id="@+id/movie_release_date"
@@ -50,6 +50,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/_22_crime_drima_2022"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@id/release_date_icon"
@@ -72,6 +73,7 @@
         android:layout_marginTop="15dp"
         android:fontFamily="@font/montserrat"
         android:text="8.5"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imdb_icon"
         app:layout_constraintTop_toBottomOf="@id/movie_title" />

@@ -1,7 +1,9 @@
 package com.example.movies.utils
 
+import com.example.movies.BuildConfig
+
 // Remember
-const val API_KEY = "d796e5f1005d4b154a4eb644fc9b0f38"
+val API_KEY = BuildConfig.API_KEY ?: ""
 const val BASE_URL = "https://api.themoviedb.org/3/movie/"
 const val NOW_PLAYING = "now_playing"
 const val TOP_RATED = "top_rated"

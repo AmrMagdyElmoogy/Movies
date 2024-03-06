@@ -22,6 +22,10 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField("String", "API_KEY", providers.gradleProperty("API_KEY").get())
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -32,6 +36,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
