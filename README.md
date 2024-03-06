@@ -101,3 +101,13 @@ The Data Layer is divided into three components:
 
  + #### Hilt
    + Hilt simplifies dependency injection in Android applications with Dagger integration.
+  
+## Download the Release APK
+
+1. Go to the [Releases](https://github.com/AmrMagdyElmoogy/Movies/releases) page of this repository.
+
+2. Find the latest release version and click on it.
+
+3. Look for the "Assets" section, and you'll find the `app-release.apk` file.
+
+4. Download the APK file to your Android device.
