@@ -16,6 +16,12 @@ The app offers a customizable user experience with both dark and light themes.
 ![](https://github.com/AmrMagdyElmoogy/Movies/blob/main/app/src/main/res/drawable/light_theme.png)
 
 
+## Live Demo 
+
+https://github.com/AmrMagdyElmoogy/Movies/assets/47532331/09de6a48-b456-4bc5-b424-4c9aded08445
+
+
+
 # Architecture
 
 The Movie Application is built using the MVVM architecture with a Single Activity and Unidirectional Data Flow patterns. This design ensures a clean and scalable structure for the application.
